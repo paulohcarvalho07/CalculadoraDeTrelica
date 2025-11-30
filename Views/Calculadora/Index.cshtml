@@ -1,0 +1,199 @@
+﻿@{
+    ViewData["Title"] = "Calculadora de Treliça";
+}
+
+<link rel="stylesheet" href="~/css/calculadora.css" />
+
+<div class="solver-header">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-4">
+        <div>
+            <h1>Calculadora de Treliça</h1>
+            <p>Modele sua treliça, defina as condições de contorno e visualize os esforços internos de maneira
+                intuitiva.</p>
+        </div>
+        <div class="solver-actions">
+            <button id="solveButton" onclick="analyzeTruss()" class="btn btn-primary btn-lg px-4">
+                Analisar Treliça
+            </button>
+            <button id="resetButton" onclick="resetCanvas()" class="btn btn-outline-danger btn-lg px-4">
+                Limpar Tudo
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="solver-app">
+    <div class="solver-layout">
+        <aside class="solver-sidebar">
+            <div class="d-flex justify-content-between align-items-center mb-3 d-lg-none">
+                <span class="text-uppercase small fw-semibold text-muted">Ferramentas</span>
+                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#solverToolbar" aria-expanded="false" aria-controls="solverToolbar">
+                    Menu
+                </button>
+            </div>
+            <div class="collapse d-lg-block" id="solverToolbar">
+                <div class="toolbar">
+                    <strong>Ferramentas</strong>
+                    <button id="tool-member" class="active" onclick="setTool('MEMBER')">Barra/Nó</button>
+                    <button id="tool-pinned" onclick="setTool('PINNED')">Apoio Fixo</button>
+                    <button id="tool-roller" onclick="setTool('ROLLER_Y')">Apoio Móvel</button>
+                    <button id="tool-load" onclick="setTool('LOAD')">Carga</button>
+
+                    <div id="load-config" style="display: none;">
+                        <label for="load-magnitude">Força (N):</label>
+                        <input type="number" id="load-magnitude" value="10000" step="100">
+
+                        <label for="load-angle">Ângulo (em graus):</label>
+                        <input type="number" id="load-angle" value="270" step="5">
+                    </div>
+
+                    <hr>
+                    <button id="tool-undo" onclick="undoLastAction()">Desfazer ação</button>
+
+                    <hr>
+                    <button class="btn btn-sm btn-outline-secondary w-100" onclick="openGridConfig()">
+                        <i class="bi bi-grid-3x3"></i> Configurar Grid
+                    </button>
+
+                    <hr>
+                    
+                    <!-- Painel de Validação / Diagnóstico -->
+                    <div class="validation-panel">
+                        <h6 class="text-uppercase small fw-bold text-muted mb-2">Diagnóstico</h6>
+                        
+                        <!-- HUD: Contadores -->
+                        <div id="validation-hud" class="d-flex gap-2 mb-2 flex-wrap justify-content-between text-center">
+                            <div class="bg-light border rounded p-1 flex-fill">
+                                <small class="d-block text-muted" style="font-size: 0.7rem;">Nós (n)</small>
+                                <span id="val-count-nodes" class="fw-bold">0</span>
+                            </div>
+                            <div class="bg-light border rounded p-1 flex-fill">
+                                <small class="d-block text-muted" style="font-size: 0.7rem;">Barras (b)</small>
+                                <span id="val-count-members" class="fw-bold">0</span>
+                            </div>
+                            <div class="bg-light border rounded p-1 flex-fill">
+                                <small class="d-block text-muted" style="font-size: 0.7rem;">Reações (r)</small>
+                                <span id="val-count-reactions" class="fw-bold">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Status de Estaticidade -->
+                        <div id="validation-status" class="alert alert-secondary p-2 mb-2 small" style="font-size: 0.8rem;">
+                            Aguardando modelo...
+                        </div>
+
+                        <!-- Checklist -->
+                        <ul id="validation-checklist" class="list-unstyled small text-muted mb-0" style="font-size: 0.85rem;">
+                            <li id="check-min-members"><i class="bi bi-circle me-1"></i> Mínimo de Barras <span class="float-end fw-bold">0/3</span></li>
+                            <li id="check-loads"><i class="bi bi-circle me-1"></i> Cargas Aplicadas <span class="float-end fw-bold">0</span></li>
+                            <li id="check-supports"><i class="bi bi-circle me-1"></i> Apoios Suficientes <span class="float-end fw-bold">0</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="solver-main-area">
+            <div class="panel">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-uppercase small fw-semibold text-muted">Área de modelagem</span>
+                </div>
+                <div id="canvas-container"></div>
+            </div>
+
+            <div class="panel" id="results-container">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2>Resultados da Análise</h2>
+                    <span class="badge bg-dark text-light opacity-75 fw-semibold">Atualize após alterações</span>
+                </div>
+                <div id="results">
+                    <div class="results-empty">
+                        <div class="results-empty-icon">🧮</div>
+                        <div>
+                            <p class="results-empty-title">Sem resultados por enquanto</p>
+                            <p class="results-empty-subtitle">Configure o modelo e clique em "Analisar Treliça" para
+                                visualizar os esforços.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Modal de Configuração do Grid (Estilo MD Solids) -->
+<div class="modal fade" id="gridConfigModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="gridConfigModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="gridConfigModalLabel">Definir Grid da Treliça</h5>
+            </div>
+            <div class="modal-body bg-light">
+                <div class="row g-3">
+                    <!-- Coluna Horizontal -->
+                    <div class="col-6">
+                        <div class="card h-100 border-secondary">
+                            <div class="card-header text-center fw-bold bg-white text-primary">
+                                Espaçamento Horizontal
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <label for="gridHSpacing" class="form-label small text-muted">Intervalo (px)</label>
+                                    <input type="number" id="gridHSpacing" class="form-control text-center fw-bold fs-5"
+                                        value="50" min="10" step="5">
+                                </div>
+                                <div class="mb-0">
+                                    <label for="gridHCount" class="form-label small text-muted">Número de
+                                        Espaços</label>
+                                    <input type="number" id="gridHCount" class="form-control text-center fw-bold fs-5"
+                                        value="20" min="1" step="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Vertical -->
+                    <div class="col-6">
+                        <div class="card h-100 border-secondary">
+                            <div class="card-header text-center fw-bold bg-white text-primary">
+                                Espaçamento Vertical
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <label for="gridVSpacing" class="form-label small text-muted">Intervalo (px)</label>
+                                    <input type="number" id="gridVSpacing" class="form-control text-center fw-bold fs-5"
+                                        value="50" min="10" step="5">
+                                </div>
+                                <div class="mb-0">
+                                    <label for="gridVCount" class="form-label small text-muted">Número de
+                                        Espaços</label>
+                                    <input type="number" id="gridVCount" class="form-control text-center fw-bold fs-5"
+                                        value="16" min="1" step="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning mt-3 mb-0 small d-flex align-items-center">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <div>
+                        <strong>Atenção:</strong> Redefinir o grid apagará todo o desenho atual.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    id="btnCancelGrid">Cancelar</button>
+                <button type="button" class="btn btn-primary px-4 fw-bold" onclick="applyGridSettings()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/app-trelica.js"></script>
+}
