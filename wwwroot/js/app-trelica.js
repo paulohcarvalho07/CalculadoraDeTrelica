@@ -113,7 +113,8 @@ const stage = new Konva.Stage({
     container: 'canvas-container',
     width: CANVAS_WIDTH,
     height: CANVAS_HEIGHT,
-    draggable: false // Desabilita o Pan nativo para controle manual estrito
+    draggable: false, // Desabilita o Pan nativo para controle manual estrito
+    pixelRatio: window.devicePixelRatio || 1 // High DPI Scaling
 });
 
 // Configuração do Zoom Inteligente
@@ -272,6 +273,11 @@ function forceResetCanvas(keepActionLog = false) {
     idLayer.destroyChildren();
     resultsLayer.destroyChildren();
     feedbackLayer.destroyChildren(); // Limpa linhas flutuantes
+
+    // NOVO: Resetar Viewport (Pan/Zoom)
+    stage.scale({ x: 1, y: 1 });
+    stage.position({ x: 0, y: 0 });
+    stage.batchDraw();
 
     // Redesenha o grid (que também limpa a camada do grid)
     drawGrid();
@@ -892,9 +898,10 @@ function createMember(nodeA, nodeB, forceId = null) {
         fontSize: 14,
         fill: '#007bff',
         padding: 2,
+        visible: false // Oculto por padrão para limpeza visual
     });
-    idLayer.add(idText);
-    newMember.konvaIdText = idText;
+    // idLayer.add(idText); // Removido do layer para não renderizar
+    newMember.konvaIdText = idText; // Mantém referência para evitar erros de null pointer
 
     members.push(newMember);
     pushToHistory('member', memberId, () => undoMember(memberId));
@@ -1169,7 +1176,7 @@ function buildResultsHtml(results) {
 function displayResultsOnCanvas(results) {
     resultsLayer.destroyChildren();
 
-    members.forEach(m => m.konvaIdText.hide());
+    members.forEach(m => { if (m.konvaIdText) m.konvaIdText.hide(); });
     nodes.forEach(n => n.konvaIdText.show());
     idLayer.draw();
 
@@ -1204,14 +1211,39 @@ function displayResultsOnCanvas(results) {
         if (angle > 90) angle -= 180;
         if (angle < -90) angle += 180;
 
+        // Tratamento para Barra Zero (Ruído Visual)
+        const isZero = Math.abs(force.Forca ?? 0) < 0.01;
+
+        if (isZero) {
+            // Visual simplificado para barra nula
+            member.konvaLine.stroke('#ced4da'); // Cinza claro
+            member.konvaLine.dash([5, 5]); // Pontilhado
+            member.konvaLine.strokeWidth(2);
+
+            // Texto minimalista "0"
+            const zeroText = new Konva.Text({
+                x: midX,
+                y: midY,
+                text: '0',
+                fontSize: 10,
+                fill: '#adb5bd',
+                align: 'center'
+            });
+            zeroText.offsetX(zeroText.width() / 2);
+            zeroText.offsetY(zeroText.height() / 2);
+            resultsLayer.add(zeroText);
+
+            continue; // Pula a criação da etiqueta grande
+        }
+
         const halo = new Konva.Circle({
             x: midX,
             y: midY,
-            radius: 22,
+            radius: 18, // Reduzido
             fill: colorTheme.fill,
             stroke: colorTheme.stroke,
             strokeWidth: 1,
-            opacity: 0.7,
+            opacity: 0.6,
             listening: false
         });
         resultsLayer.add(halo);
@@ -1221,25 +1253,26 @@ function displayResultsOnCanvas(results) {
             y: midY,
             rotation: angle,
             offsetX: 0,
-            offsetY: 14,
+            offsetY: 12, // Ajustado
             listening: false
         });
         forceLabel.add(new Konva.Tag({
             fill: VISUAL_THEME.labelBg,
-            cornerRadius: 10,
+            cornerRadius: 6, // Reduzido
             lineJoin: 'round',
             shadowColor: colorTheme.stroke,
-            shadowBlur: 18,
-            shadowOpacity: 0.22,
-            shadowOffsetY: 4
+            shadowBlur: 10,
+            shadowOpacity: 0.2,
+            shadowOffsetY: 2,
+            opacity: 0.9 // Opacidade solicitada
         }));
         forceLabel.add(new Konva.Text({
             text: `${Math.abs(force.Forca ?? 0).toFixed(1)} N\n${force?.Tipo ?? 'Neutro'} `,
-            fontSize: 14,
+            fontSize: 11, // Reduzido para 11px
             fontStyle: '600',
-            lineHeight: 1.2,
+            lineHeight: 1.1,
             fill: VISUAL_THEME.labelText,
-            padding: 8,
+            padding: 4, // Reduzido para 4px
             align: 'center'
         }));
         resultsLayer.add(forceLabel);
@@ -1358,7 +1391,7 @@ function updateAngles() {
         // Encontra barras conectadas a este nó
         const connectedMembers = members.filter(m => m.startNodeId === node.id || m.endNodeId === node.id);
 
-        if (connectedMembers.length < 2) return; // Precisa de pelo menos 2 barras para ter ângulo entre elas
+        if (connectedMembers.length < 2) return; // Precisa de pelo menos 2 barras para formar um ângulo
 
         // Calcula o ângulo absoluto de cada barra saindo do nó
         const memberAngles = connectedMembers.map(m => {
@@ -1366,18 +1399,18 @@ function updateAngles() {
             const otherNode = nodes.find(n => n.id === otherNodeId);
 
             // Ângulo em radianos (-PI a PI)
-            // Inverte Y do Konva para cálculo matemático padrão
+            // Inverte Y do Konva para cálculo matemático padrão (Y cresce para cima na matemática, para baixo no canvas)
             const dx = otherNode.x - node.x;
-            const dy = -(otherNode.y - node.y); // Y cresce para baixo no canvas
+            const dy = -(otherNode.y - node.y);
             let angle = Math.atan2(dy, dx);
 
-            // Normaliza para 0 a 2PI para facilitar ordenação
+            // Normaliza para 0 a 2PI
             if (angle < 0) angle += 2 * Math.PI;
 
             return { member: m, angle: angle };
         });
 
-        // Ordena por ângulo
+        // Ordena por ângulo (Crescente)
         memberAngles.sort((a, b) => a.angle - b.angle);
 
         // Calcula e desenha os ângulos entre barras adjacentes
@@ -1388,35 +1421,46 @@ function updateAngles() {
             let diff = next.angle - current.angle;
             if (diff < 0) diff += 2 * Math.PI; // Caso passe pelo 0 (360)
 
-            // Ignora ângulos muito pequenos ou muito grandes (ex: 360 se só tiver 1 barra, mas já filtramos < 2)
-            if (diff < 0.01 || diff > 2 * Math.PI - 0.01) continue;
+            // Filtragem Visual: Apenas ângulos internos (< 180 graus)
+            // Usamos um pequeno epsilon para evitar imprecisões de float (ex: 179.99)
+            if (diff > Math.PI - 0.001) continue;
 
-            // Desenha o arco
-            // Math angle A -> Konva angle = -A (ou 360 - A)
+            // --- Renderização ---
+
+            // Conversão para sistema do Konva (Y invertido)
+            // Math angle A -> Konva rotation = -A
+            // Sweep angle (diff) -> Konva angle = -diff (para varrer no sentido horário visualmente se partirmos do vetor matemático?)
+            // Na verdade:
+            // Math: Vetor 1 está em A. Vetor 2 está em A + diff.
+            // Konva: Vetor 1 está em -A. Vetor 2 está em -(A+diff) = -A - diff.
+            // Então se começarmos em -A (rotação), precisamos varrer -diff.
+
             const startAngleDeg = - (current.angle * 180 / Math.PI);
             const diffDeg = - (diff * 180 / Math.PI);
 
-            // Raio do arco
-            const radius = 25;
+            const radius = 20; // Raio pequeno e discreto
 
+            // Arco removido conforme solicitação
+            /*
             const arc = new Konva.Arc({
                 x: node.x,
                 y: node.y,
-                innerRadius: radius, // Deixa vazado (apenas a linha do arco)
+                innerRadius: radius, 
                 outerRadius: radius,
                 angle: diffDeg,
                 rotation: startAngleDeg,
-                stroke: '#ff8c00', // Laranja vibrante
-                strokeWidth: 2,
+                stroke: '#607d8b',
+                strokeWidth: 1.5,
                 listening: false
             });
             angleLayer.add(arc);
+            */
 
             // Texto do ângulo
             const midAngle = current.angle + diff / 2;
-            const textRadius = radius + 15;
+            const textRadius = radius + 12; // Um pouco mais afastado que o arco
             const tx = node.x + textRadius * Math.cos(midAngle);
-            const ty = node.y - textRadius * Math.sin(midAngle);
+            const ty = node.y - textRadius * Math.sin(midAngle); // Y invertido
 
             const angleValueDeg = diff * 180 / Math.PI;
 
@@ -1424,14 +1468,15 @@ function updateAngles() {
                 x: tx,
                 y: ty,
                 text: `${angleValueDeg.toFixed(0)}°`,
-                fontSize: 12,
-                fontStyle: 'bold',
-                fill: '#ff8c00', // Texto laranja combinando
+                fontSize: 10,
+                fill: '#007bff', // Azul
                 align: 'center'
             });
-            // Centraliza
+
+            // Centraliza o texto no ponto calculado
             label.offsetX(label.width() / 2);
             label.offsetY(label.height() / 2);
+
             angleLayer.add(label);
         }
     });
@@ -1453,7 +1498,7 @@ function resetAnalysisDisplay(keepResultsContent = false) {
 
     idLayer.show();
     nodes.forEach(n => n.konvaIdText.show());
-    members.forEach(m => m.konvaIdText.show());
+    members.forEach(m => { if (m.konvaIdText) m.konvaIdText.hide(); }); // Mantém oculto no reset
     idLayer.batchDraw();
 
     if (!keepResultsContent) {
@@ -1596,10 +1641,387 @@ function applyGridSettings() {
 // Mostra o modal ao carregar a página
 window.addEventListener('load', function () {
     // Abre o modal de configuração diretamente
-    // Abre o modal de configuração diretamente
-    openGridConfig();
+    // openGridConfig(); // Comentado para não abrir sempre
     validateTrussStatus(); // Validação inicial
 });
+
+// ==========================================================
+// GERADOR DE TRELIÇAS (TEMPLATES)
+// ==========================================================
+
+let templateStage = null;
+let templateLayer = null;
+
+// Configura o listener do modal de templates na inicialização
+window.addEventListener('load', function () {
+    const templateModalEl = document.getElementById('templateModal');
+    if (templateModalEl) {
+        templateModalEl.addEventListener('shown.bs.modal', function () {
+            // Pequeno delay para garantir que o layout (tamanho do div) esteja estável
+            setTimeout(() => {
+                initTemplatePreview();
+                updateTemplatePreview();
+            }, 50);
+        });
+    }
+});
+
+// Função openTemplateModal removida pois o botão usa data-bs-toggle
+// function openTemplateModal() { ... }
+
+function initTemplatePreview() {
+    const container = document.getElementById('template-preview');
+    if (!container) return;
+
+    // Se já existe, destrói para recriar (garante tamanho correto)
+    if (templateStage) {
+        templateStage.destroy();
+    }
+
+    templateStage = new Konva.Stage({
+        container: 'template-preview',
+        width: container.clientWidth,
+        height: container.clientHeight,
+        draggable: false,
+        pixelRatio: window.devicePixelRatio || 1 // High DPI Scaling
+    });
+
+    templateLayer = new Konva.Layer();
+    templateStage.add(templateLayer);
+}
+
+function updateTemplatePreview() {
+    if (!templateLayer) return;
+    templateLayer.destroyChildren();
+
+    // Reset scale/position to clear previous transforms
+    templateLayer.scale({ x: 1, y: 1 });
+    templateLayer.position({ x: 0, y: 0 });
+
+    const type = document.getElementById('trussType').value;
+    const stageWidth = templateStage.width();
+    const stageHeight = templateStage.height();
+
+    // Dimensões "Reais" (Baseadas no gerador padrão: 6 vãos de 60px)
+    const realBayWidth = 60;
+    const realHeight = 60;
+    const bays = 6;
+    const realWidth = realBayWidth * bays;
+
+    // Margem de segurança no preview
+    const padding = 40;
+    const availableWidth = stageWidth - padding;
+    const availableHeight = stageHeight - padding;
+
+    // Fator de Escala (Fit-to-View)
+    // Calcula quanto precisamos escalar para caber na área disponível
+    // Se a área for maior, ele vai aumentar (zoom in). Se for menor, diminuir (zoom out).
+    const scaleX = availableWidth / realWidth;
+    const scaleY = availableHeight / realHeight;
+    const scale = Math.min(scaleX, scaleY); // Mantém proporção (aspect ratio)
+
+    // Centralização
+    // A treliça desenhada começará em (0,0) localmente.
+    // Precisamos posicionar o layer de forma que o centro da treliça escalada coincida com o centro do stage.
+    const finalWidth = realWidth * scale;
+    const finalHeight = realHeight * scale;
+
+    const posX = (stageWidth - finalWidth) / 2;
+    const posY = (stageHeight - finalHeight) / 2;
+
+    templateLayer.scale({ x: scale, y: scale });
+    templateLayer.position({ x: posX, y: posY });
+
+    // Desenha a treliça na origem (0,0) do layer
+    drawTemplateTruss(templateLayer, type, 0, 0, realWidth, realHeight, bays);
+
+    templateLayer.batchDraw();
+}
+
+function drawTemplateTruss(layer, type, startX, startY, width, height, bays) {
+    const bayWidth = width / bays;
+
+    // Estilo
+    const strokeColor = '#0d6efd';
+    const strokeWidth = 2;
+    const nodeRadius = 3;
+    const nodeColor = '#198754';
+
+    if (type === 'warren') {
+        // --- LÓGICA WARREN (TRIANGULAR / ZIG-ZAG) ---
+
+        // 1. Nós Inferiores (0 a bays)
+        for (let i = 0; i <= bays; i++) {
+            const x = startX + (i * bayWidth);
+            layer.add(new Konva.Circle({ x: x, y: startY + height, radius: nodeRadius, fill: nodeColor }));
+        }
+
+        // 2. Nós Superiores (Deslocados - 0 a bays-1)
+        for (let i = 0; i < bays; i++) {
+            const x = startX + (i * bayWidth) + (bayWidth / 2);
+            layer.add(new Konva.Circle({ x: x, y: startY, radius: nodeRadius, fill: nodeColor }));
+        }
+
+        // 3. Banzo Inferior
+        layer.add(new Konva.Line({ points: [startX, startY + height, startX + width, startY + height], stroke: strokeColor, strokeWidth: strokeWidth }));
+
+        // 4. Banzo Superior
+        // O banzo superior vai do primeiro nó superior ao último nó superior
+        const xStartTop = startX + (bayWidth / 2);
+        const xEndTop = startX + width - (bayWidth / 2);
+        layer.add(new Konva.Line({ points: [xStartTop, startY, xEndTop, startY], stroke: strokeColor, strokeWidth: strokeWidth }));
+
+        // 5. Diagonais
+        for (let i = 0; i < bays; i++) {
+            const xBot1 = startX + (i * bayWidth);
+            const xTop = startX + (i * bayWidth) + (bayWidth / 2);
+            const xBot2 = startX + ((i + 1) * bayWidth);
+
+            const yTop = startY;
+            const yBot = startY + height;
+
+            // Sobe
+            layer.add(new Konva.Line({ points: [xBot1, yBot, xTop, yTop], stroke: strokeColor, strokeWidth: strokeWidth }));
+            // Desce
+            layer.add(new Konva.Line({ points: [xTop, yTop, xBot2, yBot], stroke: strokeColor, strokeWidth: strokeWidth }));
+        }
+
+    } else {
+        // --- LÓGICA PRATT / HOWE (RETANGULAR) ---
+
+        // Nós inferiores e superiores
+        for (let i = 0; i <= bays; i++) {
+            const x = startX + (i * bayWidth);
+
+            // Inferior
+            layer.add(new Konva.Circle({ x: x, y: startY + height, radius: nodeRadius, fill: nodeColor }));
+
+            // Superior
+            layer.add(new Konva.Circle({ x: x, y: startY, radius: nodeRadius, fill: nodeColor }));
+
+            // Montantes Verticais (Sempre presentes)
+            layer.add(new Konva.Line({ points: [x, startY, x, startY + height], stroke: strokeColor, strokeWidth: strokeWidth }));
+        }
+
+        // Cordas (Banzo Superior e Inferior)
+        layer.add(new Konva.Line({ points: [startX, startY, startX + width, startY], stroke: strokeColor, strokeWidth: strokeWidth }));
+        layer.add(new Konva.Line({ points: [startX, startY + height, startX + width, startY + height], stroke: strokeColor, strokeWidth: strokeWidth }));
+
+        // Diagonais
+        for (let i = 0; i < bays; i++) {
+            const x1 = startX + (i * bayWidth);
+            const x2 = startX + ((i + 1) * bayWidth);
+            const yTop = startY;
+            const yBot = startY + height;
+
+            if (type === 'pratt') {
+                const centerBay = bays / 2;
+                if (i < centerBay) {
+                    layer.add(new Konva.Line({ points: [x1, yTop, x2, yBot], stroke: strokeColor, strokeWidth: strokeWidth }));
+                } else {
+                    layer.add(new Konva.Line({ points: [x2, yTop, x1, yBot], stroke: strokeColor, strokeWidth: strokeWidth }));
+                }
+            } else if (type === 'howe') {
+                const centerBay = bays / 2;
+                if (i < centerBay) {
+                    layer.add(new Konva.Line({ points: [x1, yBot, x2, yTop], stroke: strokeColor, strokeWidth: strokeWidth }));
+                } else {
+                    layer.add(new Konva.Line({ points: [x2, yBot, x1, yTop], stroke: strokeColor, strokeWidth: strokeWidth }));
+                }
+            }
+        }
+    }
+}
+
+function generateTrussFromTemplate() {
+    const type = document.getElementById('trussType').value;
+
+    const numBays = 6;
+
+    // --- LÓGICA DE ESCALA ROBUSTA (FAIL-SAFE) ---
+
+    // 1. Definição do Espaçamento Base (Grid Virtual)
+    // Tenta ler do gridConfig global, senão usa 50
+    const gridSnap = (typeof gridConfig !== 'undefined' && gridConfig.dx) ? gridConfig.dx : 50;
+
+    // 2. Cálculo da Largura do Vão (Bay Width)
+    // Obtenha a largura do canvas (com fallback)
+    const stageW = stage.width() || 800;
+    const stageH = stage.height() || 600;
+
+    // Defina uma largura alvo (70% da tela)
+    const targetTotalW = stageW * 0.7;
+
+    // Calcule o tamanho bruto do vão
+    let calculatedBayW = targetTotalW / numBays;
+
+    // 3. Sanatização e Snapping (Segurança)
+    // Garante que não seja muito pequeno (Aumentado para 120px para evitar cluttering)
+    if (calculatedBayW < 120) calculatedBayW = 120;
+
+    // Arredonde para o múltiplo do grid mais próximo (para alinhar com as linhas)
+    const slots = Math.round(calculatedBayW / gridSnap);
+    const finalBayWidth = Math.max(1, slots) * gridSnap;
+
+    // 4. Definição da Altura (Proporção 1:1)
+    const finalTrussHeight = finalBayWidth;
+
+    // Mapeando para as variáveis usadas no loop
+    const BAY_WIDTH = finalBayWidth;
+    const TRUSS_HEIGHT = finalTrussHeight;
+
+    // Limpa o canvas atual
+    forceResetCanvas(false);
+
+    // Força a escala para 1:1 e posição 0,0
+    stage.scale({ x: 1, y: 1 });
+    stage.position({ x: 0, y: 0 });
+
+    // 5. Geração e Centralização
+    const totalW = finalBayWidth * numBays;
+
+    // Centraliza DENTRO do Grid (usando as coordenadas calculadas pelo drawGrid)
+    let startX, startY;
+
+    if (typeof gridConfig !== 'undefined' && typeof gridConfig.startX === 'number') {
+        const gridW = gridConfig.dx * gridConfig.nx;
+        const gridH = gridConfig.dy * gridConfig.ny;
+
+        startX = gridConfig.startX + (gridW - totalW) / 2;
+        startY = gridConfig.startY + (gridH - finalTrussHeight) / 2;
+    } else {
+        // Fallback para o centro do Stage se o grid não estiver configurado
+        startX = (stageW - totalW) / 2;
+        startY = (stageH - finalTrussHeight) / 2;
+    }
+
+    // Gera os nós e barras
+    let nodesMap = {}; // "x,y" -> nodeObject
+
+    function getOrCreateNode(x, y) {
+        // Arredonda para evitar problemas de float
+        const rx = Math.round(x * 100) / 100;
+        const ry = Math.round(y * 100) / 100;
+        const key = `${rx},${ry}`;
+        if (nodesMap[key]) return nodesMap[key];
+
+        const node = findOrCreateNodeAt({ x: rx, y: ry });
+        nodesMap[key] = node;
+        return node;
+    }
+
+    // Separação de Lógica: Warren (Triangular) vs Pratt/Howe (Retangular)
+    if (type === 'warren') {
+        // --- LÓGICA WARREN (ZIG-ZAG / TRIÂNGULOS) ---
+
+        // 1. Nós Inferiores (0 a numBays)
+        for (let i = 0; i <= numBays; i++) {
+            const x = startX + (i * BAY_WIDTH);
+            getOrCreateNode(x, startY + TRUSS_HEIGHT);
+        }
+
+        // 2. Nós Superiores (Deslocados - 0 a numBays-1)
+        for (let i = 0; i < numBays; i++) {
+            const x = startX + (i * BAY_WIDTH) + (BAY_WIDTH / 2);
+            getOrCreateNode(x, startY);
+        }
+
+        // 3. Barras Horizontais Inferiores
+        for (let i = 0; i < numBays; i++) {
+            const n1 = getOrCreateNode(startX + i * BAY_WIDTH, startY + TRUSS_HEIGHT);
+            const n2 = getOrCreateNode(startX + (i + 1) * BAY_WIDTH, startY + TRUSS_HEIGHT);
+            createMember(n1, n2);
+        }
+
+        // 4. Barras Horizontais Superiores
+        for (let i = 0; i < numBays - 1; i++) {
+            const n1 = getOrCreateNode(startX + i * BAY_WIDTH + (BAY_WIDTH / 2), startY);
+            const n2 = getOrCreateNode(startX + (i + 1) * BAY_WIDTH + (BAY_WIDTH / 2), startY);
+            createMember(n1, n2);
+        }
+
+        // 5. Diagonais (Zigue-Zague)
+        for (let i = 0; i < numBays; i++) {
+            const nBot1 = getOrCreateNode(startX + i * BAY_WIDTH, startY + TRUSS_HEIGHT);
+            const nTop = getOrCreateNode(startX + i * BAY_WIDTH + (BAY_WIDTH / 2), startY);
+            const nBot2 = getOrCreateNode(startX + (i + 1) * BAY_WIDTH, startY + TRUSS_HEIGHT);
+
+            createMember(nBot1, nTop); // Sobe
+            createMember(nTop, nBot2); // Desce
+        }
+
+    } else {
+        // --- LÓGICA PRATT / HOWE (RETANGULAR) ---
+
+        // Cria nós e barras horizontais (Banzos) e Verticais
+        for (let colIndex = 0; colIndex <= numBays; colIndex++) {
+            const x = startX + (colIndex * BAY_WIDTH);
+
+            // Nós
+            const nBot = getOrCreateNode(x, startY + TRUSS_HEIGHT);
+            const nTop = getOrCreateNode(x, startY);
+
+            // Barras Horizontais
+            if (colIndex > 0) {
+                const prevX = startX + ((colIndex - 1) * BAY_WIDTH);
+                const prevNTop = getOrCreateNode(prevX, startY);
+                const prevNBot = getOrCreateNode(prevX, startY + TRUSS_HEIGHT);
+
+                createMember(prevNTop, nTop);
+                createMember(prevNBot, nBot);
+            }
+
+            // Verticais (Sempre presentes no Pratt/Howe)
+            createMember(nBot, nTop);
+        }
+
+        // Diagonais
+        for (let i = 0; i < numBays; i++) {
+            const x1 = startX + (i * BAY_WIDTH);
+            const x2 = startX + ((i + 1) * BAY_WIDTH);
+
+            const nTop1 = getOrCreateNode(x1, startY);
+            const nBot1 = getOrCreateNode(x1, startY + TRUSS_HEIGHT);
+            const nTop2 = getOrCreateNode(x2, startY);
+            const nBot2 = getOrCreateNode(x2, startY + TRUSS_HEIGHT);
+
+            if (type === 'pratt') {
+                const centerBay = numBays / 2;
+                if (i < centerBay) {
+                    createMember(nTop1, nBot2); // \
+                } else {
+                    createMember(nTop2, nBot1); // /
+                }
+            } else if (type === 'howe') {
+                const centerBay = numBays / 2;
+                if (i < centerBay) {
+                    createMember(nBot1, nTop2); // /
+                } else {
+                    createMember(nBot2, nTop1); // \
+                }
+            }
+        }
+    }
+
+    // Adiciona apoios padrão (Fixo na esquerda, Móvel na direita)
+    const firstNodeBot = getOrCreateNode(startX, startY + TRUSS_HEIGHT);
+    const lastNodeBot = getOrCreateNode(startX + (numBays * BAY_WIDTH), startY + TRUSS_HEIGHT);
+
+    addSupport(firstNodeBot.id, 'Pinned');
+    addSupport(lastNodeBot.id, 'Roller_Y');
+
+    // Fecha o modal
+    const modalElement = document.getElementById('templateModal');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) modal.hide();
+
+    // Atualiza visualização
+    memberLayer.batchDraw();
+    nodeLayer.batchDraw();
+    idLayer.batchDraw();
+    gridLayer.batchDraw(); // Redesenha o grid caso tenha mudado algo
+}
+
 
 // ==========================================================
 // VALIDAÇÃO ESTRUTURAL (DIAGNÓSTICO)
@@ -1625,35 +2047,53 @@ function validateTrussStatus() {
         if (elMembers) elMembers.innerText = b;
         if (elReactions) elReactions.innerText = r;
 
-        // 2. Critério de Maxwell
+        // 2. Critério de Maxwell e Diagnóstico Inteligente
         const I = b + r; // Incógnitas
         const E = 2 * n; // Equações
+        const diferenca = E - I; // Déficit de restrições (se > 0, falta travar)
 
         const statusDiv = document.getElementById('validation-status');
         if (statusDiv) {
             let statusHtml = `<div class="mb-1">Incógnitas: <strong>${I}</strong> vs Equações: <strong>${E}</strong></div>`;
             const solveBtn = document.getElementById('solveButton');
+            let isReady = false;
 
             if (n === 0) {
                 statusDiv.className = 'alert alert-secondary p-2 mb-2 small';
                 statusDiv.innerHTML = 'Aguardando modelo...';
-                if (solveBtn) solveBtn.disabled = true;
-            } else if (I < E) {
-                statusDiv.className = 'alert alert-danger p-2 mb-2 small';
-                statusHtml += `<div><strong>🔴 Erro:</strong> Estrutura Instável (Hipostática).<br>O número de incógnitas é menor que o de equações. A treliça vai se mover. Adicione barras ou apoios.</div>`;
-                statusDiv.innerHTML = statusHtml;
-                if (solveBtn) solveBtn.disabled = true;
-            } else if (I === E) {
-                statusDiv.className = 'alert alert-success p-2 mb-2 small';
-                statusHtml += `<div><strong>🟢 Sucesso:</strong> Estrutura Isostática.<br>Pronta para cálculo.</div>`;
-                statusDiv.innerHTML = statusHtml;
-                if (solveBtn) solveBtn.disabled = false;
-            } else {
-                statusDiv.className = 'alert alert-warning p-2 mb-2 small';
-                statusHtml += `<div><strong>🟡 Aviso:</strong> Estrutura Hiperestática (Grau ${I - E}).<br>O cálculo pode ser mais complexo.</div>`;
-                statusDiv.innerHTML = statusHtml;
-                if (solveBtn) solveBtn.disabled = false;
+                isReady = false;
             }
+            // Caso 1: Apoios Insuficientes
+            else if (r < 3) {
+                statusDiv.className = 'alert alert-danger p-2 mb-2 small';
+                statusHtml += `<div><strong>⚠️ Instável:</strong> Faltam apoios.<br>O mínimo necessário são 3 reações (ex: 1 Fixo + 1 Móvel).</div>`;
+                statusDiv.innerHTML = statusHtml;
+                isReady = false;
+            }
+            // Caso 2: Hipostática / Instável (diferenca > 0)
+            else if (diferenca > 0) {
+                statusDiv.className = 'alert alert-danger p-2 mb-2 small';
+                statusHtml += `<div><strong>🔴 Instável (Hipostática):</strong> O sistema possui <strong>${diferenca}</strong> graus de liberdade soltos.<br>Adicione <strong>${diferenca}</strong> barras (ou apoios) para travar a estrutura.</div>`;
+                statusDiv.innerHTML = statusHtml;
+                isReady = false;
+            }
+            // Caso 3: Hiperestática (diferenca < 0)
+            else if (diferenca < 0) {
+                statusDiv.className = 'alert alert-warning p-2 mb-2 small';
+                const grauHiper = Math.abs(diferenca);
+                statusHtml += `<div><strong>🔵 Hiperestática:</strong> A estrutura possui <strong>${grauHiper}</strong> barras a mais do que o necessário para o equilíbrio estático.<br>O cálculo pode ser mais complexo.</div>`;
+                statusDiv.innerHTML = statusHtml;
+                isReady = true; // Geralmente solvers FEM resolvem hiperestáticas, mas depende do backend. Assumindo que sim.
+            }
+            // Caso 4: Isostática (diferenca === 0 E r >= 3)
+            else {
+                statusDiv.className = 'alert alert-success p-2 mb-2 small';
+                statusHtml += `<div><strong>✅ Sucesso:</strong> Estrutura isostática e estável.<br>Pronta para cálculo.</div>`;
+                statusDiv.innerHTML = statusHtml;
+                isReady = true;
+            }
+
+            if (solveBtn) solveBtn.disabled = !isReady;
         }
 
         // 3. Checklist

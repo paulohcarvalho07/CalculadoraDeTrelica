@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BmGr3U8YkyY=",
+  "dgSpecHash": "0TeXe0xx/LM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulo\\Downloads\\TrussSolver (Atualizado)\\TrussSolver\\TrussSolver\\TrussSolverMVC\\TrussSolverMVC.csproj",
+  "projectFilePath": "C:\\Users\\paulo\\Downloads\\TrussSolver (Atualizado III)\\TrussSolver\\TrussSolver\\TrussSolverMVC\\TrussSolverMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paulo\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
   ],

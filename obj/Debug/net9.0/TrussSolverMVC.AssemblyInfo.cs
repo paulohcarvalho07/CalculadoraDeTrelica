@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrussSolverMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d49498b77186bd74bb740150116f55926bf1e51")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrussSolverMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrussSolverMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

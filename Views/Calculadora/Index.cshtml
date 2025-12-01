@@ -55,15 +55,20 @@
                     <button class="btn btn-sm btn-outline-secondary w-100" onclick="openGridConfig()">
                         <i class="bi bi-grid-3x3"></i> Configurar Grid
                     </button>
+                    <button class="btn btn-sm btn-outline-secondary w-100 mt-2" data-bs-toggle="modal"
+                        data-bs-target="#templateModal">
+                        <i class="bi bi-boxes"></i> Gerar Treliça (Templates)
+                    </button>
 
                     <hr>
-                    
+
                     <!-- Painel de Validação / Diagnóstico -->
                     <div class="validation-panel">
                         <h6 class="text-uppercase small fw-bold text-muted mb-2">Diagnóstico</h6>
-                        
+
                         <!-- HUD: Contadores -->
-                        <div id="validation-hud" class="d-flex gap-2 mb-2 flex-wrap justify-content-between text-center">
+                        <div id="validation-hud"
+                            class="d-flex gap-2 mb-2 flex-wrap justify-content-between text-center">
                             <div class="bg-light border rounded p-1 flex-fill">
                                 <small class="d-block text-muted" style="font-size: 0.7rem;">Nós (n)</small>
                                 <span id="val-count-nodes" class="fw-bold">0</span>
@@ -79,15 +84,20 @@
                         </div>
 
                         <!-- Status de Estaticidade -->
-                        <div id="validation-status" class="alert alert-secondary p-2 mb-2 small" style="font-size: 0.8rem;">
+                        <div id="validation-status" class="alert alert-secondary p-2 mb-2 small"
+                            style="font-size: 0.8rem;">
                             Aguardando modelo...
                         </div>
 
                         <!-- Checklist -->
-                        <ul id="validation-checklist" class="list-unstyled small text-muted mb-0" style="font-size: 0.85rem;">
-                            <li id="check-min-members"><i class="bi bi-circle me-1"></i> Mínimo de Barras <span class="float-end fw-bold">0/3</span></li>
-                            <li id="check-loads"><i class="bi bi-circle me-1"></i> Cargas Aplicadas <span class="float-end fw-bold">0</span></li>
-                            <li id="check-supports"><i class="bi bi-circle me-1"></i> Apoios Suficientes <span class="float-end fw-bold">0</span></li>
+                        <ul id="validation-checklist" class="list-unstyled small text-muted mb-0"
+                            style="font-size: 0.85rem;">
+                            <li id="check-min-members"><i class="bi bi-circle me-1"></i> Mínimo de Barras <span
+                                    class="float-end fw-bold">0/3</span></li>
+                            <li id="check-loads"><i class="bi bi-circle me-1"></i> Cargas Aplicadas <span
+                                    class="float-end fw-bold">0</span></li>
+                            <li id="check-supports"><i class="bi bi-circle me-1"></i> Apoios Suficientes <span
+                                    class="float-end fw-bold">0</span></li>
                         </ul>
                     </div>
                 </div>
@@ -188,6 +198,40 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                     id="btnCancelGrid">Cancelar</button>
                 <button type="button" class="btn btn-primary px-4 fw-bold" onclick="applyGridSettings()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Templates (Gerador de Treliças) -->
+<div class="modal fade" id="templateModal" tabindex="-1" aria-labelledby="templateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="templateModalLabel">Gerador de Treliças</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="trussType" class="form-label">Tipo de Treliça</label>
+                    <select class="form-select" id="trussType" onchange="updateTemplatePreview()">
+                        <option value="pratt">Pratt (Diagonal tracionada)</option>
+                        <option value="howe">Howe (Diagonal comprimida)</option>
+                        <option value="warren">Warren</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <div class="card-body p-0 d-flex justify-content-center align-items-center bg-light"
+                        style="height: 200px; overflow: hidden;">
+                        <div id="template-preview" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="generateTrussFromTemplate()">Gerar
+                    Treliça</button>
             </div>
         </div>
     </div>
