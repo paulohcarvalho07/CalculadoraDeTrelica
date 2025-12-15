@@ -48,7 +48,21 @@ body {
 }
 
 .solver-sidebar {
-    flex: 0 0 280px;
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+    flex: 0 0 320px !important;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.solver-sidebar input,
+.solver-sidebar select,
+.solver-sidebar .btn,
+.solver-sidebar .input-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
 }
 
 .toolbar {
@@ -434,6 +448,202 @@ body {
         align-items: stretch;
     }
 
+    border-color: rgba(240, 98, 108, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(240, 98, 108, 0.12);
+}
+
+.result-card.neutral {
+    border-color: rgba(148, 163, 255, 0.3);
+}
+
+.result-pill {
+    background: rgba(76, 110, 245, 0.08);
+    color: var(--text-strong);
+}
+
+.result-pill--support {
+    background: rgba(81, 207, 102, 0.12);
+    color: #1c6c4b;
+}
+
+.result-pill--compression {
+    background: rgba(240, 98, 108, 0.14);
+    color: #9c2d36;
+}
+
+.result-pill--tension {
+    background: rgba(76, 110, 245, 0.14);
+    color: #2543a0;
+}
+
+.result-type {
+    color: var(--text-muted);
+}
+
+.result-value {
+    font-size: 2.05rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin: 0;
+}
+
+.result-value span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 0.4rem;
+}
+
+.result-metric {
+    background: var(--surface);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid rgba(148, 163, 255, 0.18);
+}
+
+.result-metric span.label {
+    color: var(--text-muted);
+}
+
+.result-metric span.value {
+    color: var(--text-strong);
+}
+
+.result-card--empty {
+    border-style: dashed;
+    color: var(--text-muted);
+}
+
+.result-empty-title {
+    color: var(--text-strong);
+}
+
+.result-empty-subtitle {
+    color: var(--text-muted);
+}
+
+.results-empty,
+.results-status,
+.results-error {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: rgba(245, 248, 255, 0.9);
+    border: 1px dashed rgba(76, 110, 245, 0.25);
+    border-radius: 1.1rem;
+    padding: 1.25rem 1.4rem;
+}
+
+.results-empty-icon,
+.results-status-icon,
+.results-error-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.9rem;
+    background: rgba(76, 110, 245, 0.12);
+    color: var(--cor-pincel);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.results-empty-title,
+.results-status-title,
+.results-error-title {
+    color: var(--text-strong);
+}
+
+.results-empty-subtitle,
+.results-status-subtitle,
+.results-error-subtitle {
+    color: var(--text-muted);
+}
+
+.results-status--loading .results-status-icon {
+    background: rgba(76, 110, 245, 0.18);
+    color: var(--cor-pincel);
+}
+
+.results-error {
+    border-color: rgba(240, 98, 108, 0.4);
+    background: rgba(255, 244, 244, 0.95);
+}
+
+.results-error-icon {
+    background: rgba(240, 98, 108, 0.18);
+    color: #c73645;
+}
+
+.results-error-title {
+    color: #c73645;
+}
+
+.results-error-subtitle {
+    color: #91303a;
+}
+
+@media (max-width: 767.98px) {
+    #results {
+        padding: 1.5rem;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .results-empty,
+    .results-status,
+    .results-error {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .results-empty-icon,
+    .results-status-icon,
+    .results-error-icon {
+        width: auto;
+        height: auto;
+        border-radius: 0.75rem;
+        padding: 0.4rem 0.55rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .solver-sidebar {
+        flex: 0 0 240px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .solver-layout {
+        flex-direction: column;
+    }
+
+    .solver-sidebar {
+        position: static;
+    }
+
+    .toolbar {
+        position: static;
+        box-shadow: none;
+        border-radius: 1.1rem;
+        border-width: 1px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .solver-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .solver-actions button {
         width: 100%;
     }
@@ -441,4 +651,10 @@ body {
     #canvas-container {
         height: clamp(320px, 60vh, 640px);
     }
+}
+
+/* 3. Evitar Quebra de Layout por Padding */
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }

@@ -603,3 +603,205 @@ C:\Users\paulo\Downloads\TrussSolver (Atualizado III)\TrussSolver\TrussSolver\Tr
 C:\Users\paulo\Downloads\TrussSolver (Atualizado III)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.genruntimeconfig.cache
 C:\Users\paulo\Downloads\TrussSolver (Atualizado III)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\ref\TrussSolverMVC.dll
 C:\Users\paulo\Downloads\TrussSolver (Atualizado III)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\g3o3da0v6b-bqw1foxeey.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\appsettings.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.staticwebassets.endpoints.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.staticwebassets.runtime.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.exe
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.deps.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.runtimeconfig.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.pdb
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\MathNet.Numerics.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.csproj.AssemblyReference.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.AssemblyInfoInputs.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.AssemblyInfo.cs
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.csproj.CoreCompileInputs.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.RazorAssemblyInfo.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.RazorAssemblyInfo.cs
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.sourcelink.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\bundle\TrussSolverMVC.styles.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\projectbundle\TrussSolverMVC.bundle.scp.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\prwialy634-b9sayid5wm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\5ld5jzdslq-61n19gt1b8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\y9670lezgw-bqjiyaj88i.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\cx62lo3r3e-c2jlpeoesf.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\6mdndrxqtd-erw9l3u2r3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\behf7gdpx7-aexeepp0ev.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3qn9ql7t22-d7shbmvgxk.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\lz7tf736x8-ausgxo2sd3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qjpt6hbslf-k8d9w2qqmf.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\zwcq2niiph-cosvhxvwiu.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ay3xlbohg9-ub07r2b239.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\1j2o1f57d5-fvhpjtyr6v.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\uz1zyl6x3n-b7pk76d08c.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\a58dhdcj42-fsbi9cje9m.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ivuekb514k-rzd6atqjts.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9a0uuel2as-ee0r1s7dh0.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\35py0wo8pj-dxx9fxp4il.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\m1ss3rduti-jd9uben2k1.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\r3w40hxnib-khv3u5hwcm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9olk28d79k-r4e9w2rdcm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3d2q14m8fe-lcd1t2u6c8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\mkql1hlbmc-c2oey78nd0.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ceg6vns009-tdbxkamptv.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\q8vrrh3bg2-j5mq2jizvt.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\uvoab18yty-06098lyss8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\4q7u6j0s6m-nvvlpmu67g.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\4y34929ymw-s35ty4nyc5.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\jwwkjrl7xl-pj5nd1wqec.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qhfkl53cmc-46ein0sx1k.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\b3k7c2rj3c-v0zj4ognzu.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\rg1dw18apf-37tfw0ft22.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\mtoxhcxws7-hrwsygsryq.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9lmarik4us-pk9g2wxc8p.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\gqo8s841c9-ft3s53vfgj.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3g49mdvm6v-6cfz1n2cew.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\63b3xklwhg-6pdc2jztkx.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ximn80iahd-493y06b0oq.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\0hz5xzsq82-iovd86k7lj.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\vu1d3ovz7u-vr1egmr9el.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\js9ssw5zi4-kbrnm935zg.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\f3v8zqm4dm-jj8uyg4cgr.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\0z2kktsarx-y7v9cxd14o.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\1t0zoxbyp7-notf2xhcfb.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\rmhk43sufj-h1s4sie4z3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\m5ifuf72rx-63fj8s7r0e.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\p4haq91cg9-0j3bgjxly4.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\kbid3d3k56-47otxtyo56.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\jzeaftzccc-4v8eqarkd7.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3yor1bewmb-356vix0kms.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\x01xvi0gx7-83jwlth58m.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\f8s1xau26v-mrlpezrjn3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\zlxi05rdcq-lzl9nlhx6b.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9bseq81txk-ag7o75518u.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\24d11pqt2s-x0q3zqp4vz.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\j5n5t2jb5s-0i3buxo5is.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qwkbcv8mtd-o1o13a6vjx.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\dsoqp14i07-ttgo8qnofa.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\cqkgfdfjkg-2z0ns9nrw6.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\2rzwml6953-muycvpuwrr.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\boa7yx8k8f-87fc7y1x7t.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\bx4hwee43u-mlv21k5csn.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3vu3jm0oh5-9tr7xlwp1d.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ikclwd5iep-9tr7xlwp1d.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSol.57166B8F.Up2Date
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\refint\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.pdb
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.genruntimeconfig.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\ref\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\g3o3da0v6b-aya1ydxzla.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado V)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\as202xr198-t0fv1o1q7x.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\appsettings.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.staticwebassets.runtime.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.staticwebassets.endpoints.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.exe
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.deps.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.runtimeconfig.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\TrussSolverMVC.pdb
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\bin\Debug\net9.0\MathNet.Numerics.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.csproj.AssemblyReference.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.AssemblyInfoInputs.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.AssemblyInfo.cs
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.csproj.CoreCompileInputs.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.RazorAssemblyInfo.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.RazorAssemblyInfo.cs
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.sourcelink.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\bundle\TrussSolverMVC.styles.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\scopedcss\projectbundle\TrussSolverMVC.bundle.scp.css
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\as202xr198-t0fv1o1q7x.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\prwialy634-b9sayid5wm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\5ld5jzdslq-61n19gt1b8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\g3o3da0v6b-aya1ydxzla.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\y9670lezgw-bqjiyaj88i.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\cx62lo3r3e-c2jlpeoesf.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\6mdndrxqtd-erw9l3u2r3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\behf7gdpx7-aexeepp0ev.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3qn9ql7t22-d7shbmvgxk.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\lz7tf736x8-ausgxo2sd3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qjpt6hbslf-k8d9w2qqmf.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\zwcq2niiph-cosvhxvwiu.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ay3xlbohg9-ub07r2b239.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\1j2o1f57d5-fvhpjtyr6v.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\uz1zyl6x3n-b7pk76d08c.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\a58dhdcj42-fsbi9cje9m.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ivuekb514k-rzd6atqjts.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9a0uuel2as-ee0r1s7dh0.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\35py0wo8pj-dxx9fxp4il.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\m1ss3rduti-jd9uben2k1.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\r3w40hxnib-khv3u5hwcm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9olk28d79k-r4e9w2rdcm.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3d2q14m8fe-lcd1t2u6c8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\mkql1hlbmc-c2oey78nd0.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ceg6vns009-tdbxkamptv.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\q8vrrh3bg2-j5mq2jizvt.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\uvoab18yty-06098lyss8.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\4q7u6j0s6m-nvvlpmu67g.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\4y34929ymw-s35ty4nyc5.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\jwwkjrl7xl-pj5nd1wqec.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qhfkl53cmc-46ein0sx1k.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\b3k7c2rj3c-v0zj4ognzu.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\rg1dw18apf-37tfw0ft22.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\mtoxhcxws7-hrwsygsryq.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9lmarik4us-pk9g2wxc8p.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\gqo8s841c9-ft3s53vfgj.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3g49mdvm6v-6cfz1n2cew.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\63b3xklwhg-6pdc2jztkx.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ximn80iahd-493y06b0oq.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\0hz5xzsq82-iovd86k7lj.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\vu1d3ovz7u-vr1egmr9el.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\js9ssw5zi4-kbrnm935zg.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\f3v8zqm4dm-jj8uyg4cgr.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\0z2kktsarx-y7v9cxd14o.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\1t0zoxbyp7-notf2xhcfb.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\rmhk43sufj-h1s4sie4z3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\m5ifuf72rx-63fj8s7r0e.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\p4haq91cg9-0j3bgjxly4.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\kbid3d3k56-47otxtyo56.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\jzeaftzccc-4v8eqarkd7.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3yor1bewmb-356vix0kms.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\x01xvi0gx7-83jwlth58m.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\f8s1xau26v-mrlpezrjn3.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\zlxi05rdcq-lzl9nlhx6b.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\9bseq81txk-ag7o75518u.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\24d11pqt2s-x0q3zqp4vz.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\j5n5t2jb5s-0i3buxo5is.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\qwkbcv8mtd-o1o13a6vjx.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\dsoqp14i07-ttgo8qnofa.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\cqkgfdfjkg-2z0ns9nrw6.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\2rzwml6953-muycvpuwrr.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\boa7yx8k8f-87fc7y1x7t.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\bx4hwee43u-mlv21k5csn.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\3vu3jm0oh5-9tr7xlwp1d.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\compressed\ikclwd5iep-9tr7xlwp1d.gz
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSol.57166B8F.Up2Date
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\refint\TrussSolverMVC.dll
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.pdb
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\TrussSolverMVC.genruntimeconfig.cache
+C:\Users\paulo\Downloads\TrussSolver (Atualizado VI)\TrussSolver (Atualizado VI)\TrussSolver\TrussSolver\TrussSolverMVC\obj\Debug\net9.0\ref\TrussSolverMVC.dll
